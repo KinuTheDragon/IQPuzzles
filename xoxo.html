@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>IQ XOXO</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>IQ XOXO</h1>
+        <a href="index.html">Back to home</a><br/>
+        <button onclick="pieces.find(x => x.selected)?.flipV?.();draw();">
+            <span class="material-symbols-outlined" style="transform:rotate(90deg)">flip</span>
+        </button>
+        <button onclick="pieces.find(x => x.selected)?.flipH?.();draw();">
+            <span class="material-symbols-outlined">flip</span>
+        </button>
+        <button onclick="pieces.find(x => x.selected)?.rotate?.(1);draw();">
+            <span class="material-symbols-outlined">rotate_left</span>
+        </button>
+        <button onclick="pieces.find(x => x.selected)?.rotate?.(-1);draw();">
+            <span class="material-symbols-outlined">rotate_right</span>
+        </button>
+        <button onclick="copyState()">
+            <span class="material-symbols-outlined">content_copy</span>
+        </button>
+        <button onclick="pasteState()">
+            <span class="material-symbols-outlined">content_paste</span>
+        </button>
+        <br/>
+        <label for="level">Select puzzle:</label>
+        <select id="level" name="level" oninput="loadPuzzle(+this.value)">
+            <option value="-1">(Select)</option>
+        </select><br/>
+        <canvas id="canvas" width="500" height="550"></canvas><br/>
+        Goal: Place all the pieces onto the board.<br/>
+        Rules: <ul>
+            <li>No overlapping pieces</li>
+            <li>The bumps on the board can only fit under the Os
+                on the underside of the pieces</li>
+        </ul>
+        Errors are highlighted in black circles.<br/>
+        When you win, the border of the board will turn green.<br/>
+        Controls: <table>
+            <tr>
+                <th>Control</th>
+                <th>Effect</th>
+            </tr><tr>
+                <td>Click &amp; drag</td>
+                <td>Move piece</td>
+            </tr><tr>
+                <td>Q</td>
+                <td>Rotate left</td>
+            </tr><tr>
+                <td>E</td>
+                <td>Rotate right</td>
+            </tr><tr>
+                <td>A</td>
+                <td>Flip horizontally</td>
+            </tr><tr>
+                <td>D</td>
+                <td>Flip vertically</td>
+            </tr>
+        </table>
+        <script src="js/common.js"></script>
+        <script src="js/data/xoxo.js"></script>
+        <script src="js/xoxo.js"></script>
+    </body>
+</html>

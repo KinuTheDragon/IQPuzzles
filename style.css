@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0");
+
+html, body {
+    background-color: #000;
+    color: #fff;
+    font-family: "Noto Sans", sans-serif;
+}
+
+a {
+    color: #0ff;
+}
+
+a:hover, a:active {
+    color: #0f0;
+}
+
+button {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.material-symbols-outlined {
+    font-size: 40px !important;
+    user-select: none;
+}
+
+table, tr, th, td {
+    border: 1px solid #fff;
+    border-collapse: collapse;
+}
+
+canvas {
+    touch-action: none;
+}
